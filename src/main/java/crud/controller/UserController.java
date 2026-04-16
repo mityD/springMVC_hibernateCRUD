@@ -21,15 +21,6 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostConstruct
-    public void init() {
-        userService.save(new User("Masha", "asw@Masha"));
-        userService.save(new User("Sveta", "fry@Sveta"));
-        userService.save(new User("Valera", "bdx@Valera"));
-        userService.save(new User("Maksim", "hsr@Maksim"));
-        userService.save(new User("Aleksander", "olk@Aleksander"));
-    }
-
     @GetMapping(value = "/")
     public String viewPage(ModelMap model) {
         List<User> users = userService.getListUsers();
